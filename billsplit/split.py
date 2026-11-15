@@ -7,8 +7,9 @@ def split_bill(total_cents: int, people: int) -> list[int]:
         raise ValueError("people must be at least 1")
     if total_cents < 0:
         raise ValueError("total_cents can't be negative")
-    share = total_cents // people
-    return [share] * people
+    share, leftover = divmod(total_cents, people)
+    # The first `leftover` people each pay one extra cent, so nothing is lost.
+    return [share + 1] * leftover + [share] * (people - leftover)
 
 
 def format_cents(cents: int) -> str:
