@@ -2,7 +2,7 @@
 # Stop hook: runs the tests when Claude tries to finish. If they fail, Claude keeps working.
 # It blocks only once in a row: if Claude tries to finish again, it is allowed to.
 
-TEST_CMD="<test command>"
+TEST_CMD='python3 -m unittest discover -p "test_*.py"'
 
 case "$TEST_CMD" in
   "<"*) exit 0 ;;

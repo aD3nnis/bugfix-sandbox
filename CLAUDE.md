@@ -1,14 +1,14 @@
-# <Project name>
+# bugfix-sandbox
 
-<One sentence: what this project does, and its main language and framework.>
+A throwaway project for rehearsing the Bug fix workflow: a tiny bill-splitting package in Python, standard library only.
 
 ## Commands
-- Run all tests: `<test command>`
-- Run one test file: `<test command> <path>`
-- Lint: `<lint command>`
+- Run all tests: `python3 -m unittest discover -p "test_*.py"`
+- Run one test file: `python3 -m unittest <path>`
+- Lint: `ruff check .`
 
 ## Conventions
-- Tests live next to the code they test, named `<test file pattern>`.
+- Tests live next to the code they test, named `test_*.py`.
 - When opening a PR, read `.github/pull_request_template.md` and fill in every section in the PR body.
 
 ## Sessions

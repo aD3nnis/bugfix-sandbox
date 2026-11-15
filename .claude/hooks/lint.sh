@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # PostToolUse hook: runs the linter after Claude edits or writes a file.
 
-LINT_CMD="<lint command>"
+LINT_CMD="ruff check ."
 
 case "$LINT_CMD" in
   "<"*) exit 0 ;;
