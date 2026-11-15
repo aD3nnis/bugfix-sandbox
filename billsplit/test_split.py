@@ -10,6 +10,16 @@ class SplitBillTest(unittest.TestCase):
     def test_one_person_pays_everything(self):
         self.assertEqual(split_bill(1999, 1), [1999])
 
+    def test_uneven_split_adds_up_to_total(self):
+        shares = split_bill(1000, 3)
+        self.assertEqual(sum(shares), 1000)
+        self.assertEqual(shares, [334, 333, 333])
+
+    def test_several_cents_left_over_are_spread_out(self):
+        shares = split_bill(1000, 7)
+        self.assertEqual(sum(shares), 1000)
+        self.assertEqual(shares, [143, 143, 143, 143, 143, 143, 142])
+
     def test_no_people_is_an_error(self):
         with self.assertRaises(ValueError):
             split_bill(1000, 0)
