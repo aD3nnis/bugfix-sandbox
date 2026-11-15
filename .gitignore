@@ -1,0 +1,23 @@
+# macOS folder metadata
+.DS_Store
+
+# Personal Claude Code files: yours, not the project's
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Worktrees Claude Code creates
+.claude/worktrees/
+
+# Secrets
+.env
+.env.*
+
+# Local git-status snapshot page (published as an artifact)
+git-stages.html
+
+# Skill test review pages
+handoff-eval-review.html
+
+# Python
+__pycache__/
+*.pyc
